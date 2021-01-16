@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+		xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Index</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div th:if="${message}" class="error">
+	<p th:text="${message}">
+</div>
+	<h1>Welcome to the Library Database</h1><br>
+	
+	<div th:if="${bookList.empty}">
+		<h2>No Books</h2>
+	</div>
+	<div th:unless="${bookList.empty}">
+		<table>
+			<tr>
+				<th>Author</th>
+				<th>title</th>
+				<th>Reviews</th>
+			</tr>
+			<tr th:each="book : ${bookList}">
+				<td th:text="${book.author}"></td>
+				<td th:text="${book.title}"></td>
+				<td><a href="" th:href="@{/viewBook/} + ${book.id}">view</a></td>
+			</tr>
+		</table>
+		</div>
+		<br>
+	<div sec:authorize="!isAuthenticated()">
+	<a href="#" th:href="@{/login}">Login</a><br>
+	</div>
+	<div sec:authorize="hasRole('ROLE_ADMIN')">
+	<a href="/add-book">Add book</a>
+	</div><br>
+	<div sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
+		<form action="#" th:action="@{/logout}" method="post">
+		<input type="submit" value="Logout" id="button1">
+	</form>
+	</div>
+	
+	
+	
+</body>
+</html>

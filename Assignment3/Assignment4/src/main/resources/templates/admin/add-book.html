@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add a book</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<h1>Add Book!</h1>
+<form action="#" th:action="@{/add-book}" method="post" th:object="${book}">
+		<p>Title   :   <input type="text" name="author" id = "text1"/></p>
+		<p>Author  :  <input type="text" name="title" id = "text1"/></p>
+		<input type="submit" value="Add book!" id="button1">
+</form>
+</body>
+</html>

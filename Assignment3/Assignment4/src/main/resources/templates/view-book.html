@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Book</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+
+	<div th:if="${reviewList.empty}">
+		<h2>No reviews</h2>
+	</div>
+	<div th:unless="${reviewList.empty}">
+		
+			<ul th:each="review : ${reviewList}">
+				<li th:text="${review.text}"></li>
+			</ul>
+		</div>
+		
+		<p>Want to leave a review?<a href="#" th:href="@{/add-review}" >Click here</a>
+</body>
+</html>

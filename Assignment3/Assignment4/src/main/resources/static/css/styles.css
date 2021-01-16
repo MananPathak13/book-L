@@ -1,0 +1,46 @@
+@charset "ISO-8859-1";
+body
+{
+	background-color: #3AAFA9;
+}
+h1{
+	color: white;
+	font-size:50px;
+}
+table,th,td
+{
+  border-style: solid;
+  border-width: 3px;
+  border-color:#17252A;
+
+}
+th, td {
+
+  padding: 15px;
+  text-align: left;
+}
+th
+{
+	font-size:24px;
+	color:	#17252A;
+	font-weight:bold;
+}
+td{
+	font-size:18px;
+	color:white;
+	font-weight:bold;
+}
+div{
+	font-size:18px;
+	color:	#17252A;
+	font-weight:bold;
+}
+#text1{
+	background-color:#2b7a78;
+	color:white;
+
+}
+#button1{
+		background-color:#2b7a78;
+		color:white;
+}
